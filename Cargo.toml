@@ -1,0 +1,11 @@
+[package]
+name = "gut-time"
+version = "0.1.0"
+authors = ["Jared De La Cruz <jared@jareddlc.com>"]
+edition = "2018"
+
+[lib]
+name = "_gut_time"
+crate-type = ["cdylib"]
+
+[dependencies]
