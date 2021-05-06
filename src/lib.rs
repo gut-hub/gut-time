@@ -1,4 +1,3 @@
-
 #[allow(improper_ctypes_definitions)]
 pub mod gut_time {
     use std::time::{SystemTime, UNIX_EPOCH};
@@ -16,9 +15,7 @@ pub mod gut_time {
     #[no_mangle]
     fn time_now() {
         let now = SystemTime::now();
-        let epoch = now
-            .duration_since(UNIX_EPOCH)
-            .expect("Failed to get time");
+        let epoch = now.duration_since(UNIX_EPOCH).expect("Failed to get time");
 
         println!("{}", epoch.as_millis())
     }

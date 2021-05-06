@@ -7,5 +7,3 @@ edition = "2018"
 [lib]
 name = "_gut_time"
 crate-type = ["cdylib"]
-
-[dependencies]
