@@ -7,3 +7,8 @@ edition = "2018"
 [lib]
 name = "_gut_time"
 crate-type = ["cdylib"]
+
+[profile.release]
+codegen-units = 1
+opt-level = 'z'
+lto = true
