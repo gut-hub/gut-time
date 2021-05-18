@@ -4,12 +4,12 @@ version = "0.1.0"
 authors = ["Jared De La Cruz <jared@jareddlc.com>"]
 edition = "2018"
 
-# building:
-# cargo build --target wasm32-wasi --release
-
 [lib]
 name = "gut_time"
 crate-type = ["cdylib"]
+
+[dependencies]
+gut-plugin = "0.1"
 
 [profile.release]
 codegen-units = 1
