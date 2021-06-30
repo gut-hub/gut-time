@@ -21,7 +21,7 @@ jobs:
     - name: Build
       run: cargo build --target wasm32-wasi --release
     - name: Configure release
-      run: echo "{ALLOW_EMPTY_CHANGELOG}={true}" >> $GITHUB_ENV
+      run: echo "ALLOW_EMPTY_CHANGELOG=true" >> $GITHUB_ENV
     - name: Release
       uses: anton-yurchenko/git-release@main
       env:
