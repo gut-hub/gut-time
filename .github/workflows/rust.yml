@@ -2,8 +2,8 @@ name: Release
 
 on:
   push:
-    tags:
-      - "*"
+    branches:
+      - "master"
 
 env:
   CARGO_TERM_COLOR: always
@@ -24,9 +24,7 @@ jobs:
       run: cargo build --target wasm32-wasi --release
 
     - name: Release
-      uses: anton-yurchenko/git-release@main
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        ALLOW_EMPTY_CHANGELOG: "true"
+      uses: "marvinpinto/action-automatic-releases@latest"
       with:
-        args: target/wasm32-wasi/release/gut_time.wasm
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        files: target/wasm32-wasi/release/gut_time.wasm
